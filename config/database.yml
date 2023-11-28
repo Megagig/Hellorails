@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+development:
+  <<: *default
+  database: hellorails_dev
+  username: megagig
+  password: password
+  host: localhost
+test:
+  <<: *default
+  database: hellorails_test
+  username: megagig
+  password: password
+  host: localhost
+production:
+  <<: *default
+  database: hellorails_prod
+  username: megagig
+  password: password
+  host: localhost
